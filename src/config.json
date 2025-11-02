@@ -1,0 +1,9 @@
+{
+  "scanningOverlay": false,
+  "background": false,
+  "sceneModel": "model/scene.gltf",
+  "sceneImage": "model/scene.png",
+  "triggerImage": "trigger/trigger.png",
+  "triggerTarget": "trigger/trigger.mind",
+  "animate": false
+}

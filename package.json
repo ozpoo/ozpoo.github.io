@@ -1,0 +1,23 @@
+{
+  "name": "aframe-hello-world-boilerplate",
+  "description": "Boilerplate with A-Frame's 'Hello, World!' of WebVR.",
+  "version": "0.3.0",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 3000 --cors --open",
+    "build": "vite build",
+    "deploy": "gh-pages",
+    "ghpages": "gh-pages"
+  },
+  "dependencies": {
+    "aframe": "^1.7.1",
+    "aframe-inspector": "^1.7.0",
+    "mind-ar": "^1.2.5"
+  },
+  "devDependencies": {
+    "ghpages": "0.0.3",
+    "vite": "^7.1.12"
+  },
+  "packageManager": "pnpm@10.20.0+sha512.cf9998222162dd85864d0a8102e7892e7ba4ceadebbf5a31f9c2fce48dfce317a9c53b9f6464d1ef9042cba2e02ae02a9f7c143a2b438cd93c91840f0192b9dd"
+}
