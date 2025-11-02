@@ -7,8 +7,8 @@
   "scripts": {
     "dev": "vite --port 3000 --cors --open",
     "build": "vite build",
-    "deploy": "gh-pages",
-    "ghpages": "gh-pages"
+    "deploy": "ghpages",
+    "ghpages": "ghpages"
   },
   "dependencies": {
     "aframe": "^1.7.1",
