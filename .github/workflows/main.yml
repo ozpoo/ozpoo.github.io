@@ -28,14 +28,18 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
+      - name: pnpm-setup
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
       - name: Checkout
         uses: actions/checkout@v5
       - name: Set up Node
         uses: actions/setup-node@v5
         with:
           node-version: lts/*
-          cache: 'npm'
-      - name: pnpm dependencies
+          cache: 'pnpm'
+      - name: Install dependencies
         run: pnpm ci
       - name: Build
         run: pnpm run build
