@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="./compiler.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.js"></script>
+  </head>
+  <body loaded>
+    <div id="zone">
+      <menu>
+        <div id="buttons">
+          <button id="start-btn" disabled>Start</button>
+          <button id="cancel-btn">Cancel</button>
+          <button id="download-btn">Download</button>
+        </div>
+        <div id="progress">
+          <div class="bar"></div>
+        </div>
+      </menu>
+      <div id="dropzone" class="dropzone"></div>
+    </div>
+    <div id="container">
+      <div id="grid"></div>
+    </div>
+    <script type="module" src="./compiler.js"></script>
+  </body>
+</html>

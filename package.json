@@ -7,12 +7,11 @@
   "scripts": {
     "dev": "vite --port 3000 --cors --open",
     "build": "vite build",
-    "deploy": "ghpages",
-    "ghpages": "ghpages"
+    "preview": "vite preview --port 3000 --open",
+    "deploy": "gh-pages"
   },
   "dependencies": {
     "aframe": "^1.7.1",
-    "aframe-inspector": "^1.7.0",
     "mind-ar": "^1.2.5"
   },
   "devDependencies": {
