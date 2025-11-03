@@ -39,10 +39,8 @@ jobs:
         with:
           node-version: lts/*
           cache: 'pnpm'
-      - name: Install dependencies
-        run: pnpm ci
       - name: Build
-        run: pnpm run build
+        run: pnpm build
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
