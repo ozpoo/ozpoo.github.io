@@ -1,4 +1,4 @@
-import { Compiler } from '../libraries/mind-ar/image-target/compiler.js'
+import { Compiler } from '../assets/libraries/mind-ar/image-target/compiler.js'
 
 Dropzone.autoDiscover = false
 
