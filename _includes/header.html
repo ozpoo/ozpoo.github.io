@@ -1,14 +1,14 @@
 <header class="site-header">
-    <div class="wrapper">
-        <a class="site-title" rel="author" href="{{ '/' | relative_url }}">
-            {{ site.title | escape }}
-        </a>
-        {%- unless page_titles == empty %}
-        <nav class="site-nav">
-            <label for="nav-trigger">
-                <span class="menu-icon"></span>
-            </label>
-        </nav>
-        {%- endunless %}
-    </div>
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="{{ '/' | relative_url }}">
+      {{ site.title | escape }}
+    </a>
+    {%- unless page_titles == empty %}
+    <nav class="site-nav">
+      <label for="nav-trigger">
+        <span class="menu-icon"></span>
+      </label>
+    </nav>
+    {%- endunless %}
+  </div>
 </header>
