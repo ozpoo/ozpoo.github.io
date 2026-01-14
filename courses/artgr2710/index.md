@@ -1,0 +1,3 @@
+# Hey!
+
+[Syllabus]("./syllabus.md")
