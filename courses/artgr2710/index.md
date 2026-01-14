@@ -1,3 +1,7 @@
+---
+layout: page
+title: ArtGR 2710
+---
 # Hey!
 
 - [Syllabus](syllabus.md)
