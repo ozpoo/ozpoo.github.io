@@ -1,3 +1,4 @@
 # Hey!
 
-[Syllabus]("./syllabus.md")
+- [Syllabus]("syllabus.md")
+- [Project 01]("project_01.md")
