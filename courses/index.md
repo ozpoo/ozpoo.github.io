@@ -1,3 +1,3 @@
 # Courses
 
-- [ArtGR 2710]("artgr2710")
+- [ArtGR 2710](artgr2710)
