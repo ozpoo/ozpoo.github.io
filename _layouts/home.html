@@ -2,25 +2,24 @@
 layout: base
 ---
 
-<div class="home">
-    {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-    {%- endif -%} {{ content }} {% if site.paginate %} {% assign pages =
-    paginator.pages %} {% else %} {% assign pages = site.pages %} {% endif %}
-    {%- if pages.size > 0 -%} {%- if page.list_title -%}
-    <h2>{{ page.list_title }}</h2>
-    {%- endif -%}
-    <ul>
-        {%- for page in pages -%}
-        <li>
-            <h3>
-                <a href="{{ page.url | relative_url }}">
-                    {{ page.list_title | escape }}
-                </a>
-            </h3>
-            {%- if site.minima.show_excerpts -%} {{ page.excerpt }} {%- endif
-            -%}
-        </li>
-        {%- endfor -%}
-    </ul>
+<div>
+  {%- if page.title -%}
+  <h1>{{ page.title }}</h1>
+  {%- endif -%} {{ content }} {% if site.paginate %} {% assign pages =
+  paginator.pages %} {% else %} {% assign pages = site.pages %} {% endif %} {%-
+  if pages.size > 0 -%} {%- if page.list_title -%}
+  <h2>{{ page.list_title }}</h2>
+  {%- endif -%}
+  <ul>
+    {%- for page in pages -%}
+    <li>
+      <h3>
+        <a href="{{ page.url | relative_url }}">
+          {{ page.list_title | escape }}
+        </a>
+      </h3>
+      {%- if site.minima.show_excerpts -%} {{ page.excerpt }} {%- endif -%}
+    </li>
+    {%- endfor -%}
+  </ul>
 </div>

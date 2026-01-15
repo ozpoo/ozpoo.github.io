@@ -1,12 +1,12 @@
-<header class="site-header">
-  <div class="wrapper">
-    <a class="site-title" rel="author" href="{{ '/' | relative_url }}">
+<header>
+  <div>
+    <a rel="author" href="{{ '/' | relative_url }}">
       {{ site.title | escape }}
     </a>
     {%- unless page_titles == empty %}
-    <nav class="site-nav">
+    <nav>
       <label for="nav-trigger">
-        <span class="menu-icon"></span>
+        <span></span>
       </label>
     </nav>
     {%- endunless %}
