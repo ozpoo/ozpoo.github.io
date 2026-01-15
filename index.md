@@ -4,4 +4,5 @@ title: Home
 ---
 # Welcome
 
-This is your new GitHub Pages site powered by Jekyll.
+- [Courses](courses)
+- [Posts](posts)
