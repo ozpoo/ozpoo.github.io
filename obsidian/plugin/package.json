@@ -1,0 +1,26 @@
+{
+  "name": "@ozpoo/obsidian-plugin",
+  "version": "1.0.0",
+  "description": "This is a sample plugin for Obsidian (https://obsidian.md)",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
+    "version": "node version-bump.mjs && git add manifest.json versions.json"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^16.11.6",
+    "esbuild": "0.25.5",
+    "globals": "14.0.0",
+    "jiti": "2.6.1",
+    "prettier": "^3.7.4",
+    "tslib": "2.4.0",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "obsidian": "latest"
+  }
+}
