@@ -1,8 +1,7 @@
 ---
 layout: page
-title: ArtGR 2710
+title: ArtGR 5220
 ---
-- [Syllabus](syllabus.md)
 - [Project 01](project_01.md)
 - [Project 02](project_02.md)
 - [Project 03](project_03.md)
