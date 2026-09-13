@@ -2,3 +2,7 @@
   font-size: inherit;
   font-family: monospace;
 }
+
+article>h1 em {
+  font-weight: normal;
+}
