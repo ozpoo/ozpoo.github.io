@@ -4,11 +4,11 @@
   --base: mintcream;
 
   --bg-l: color-mix(in srgb, var(--base), black 6%);
-  --bg-d: color-mix(in srgb, black, var(--base) 4%);
+  --bg-d: color-mix(in srgb, black, var(--base) 6%);
   --bg: light-dark(var(--bg-l), var(--bg-d));
 
   --fg-l: color-mix(in srgb, var(--bg-d), var(--bg-l) 6%);
-  --fg-d: color-mix(in srgb, var(--bg-l), var(--bg-d) 6%);
+  --fg-d: color-mix(in srgb, var(--bg-l), var(--bg-d) 8%);
   --fg: light-dark(var(--fg-l), var(--fg-d));
 
   --soft-l: color-mix(in srgb, var(--fg), var(--base) 34%);
@@ -27,22 +27,26 @@
   --visited: var(--fg);
 
   --txt-sm: 0.88rem;
+
+  --sans: ia-writer-quattro, sans-serif;
+  --mono: ia-writer-mono, monospace;
 }
 
 * {
   font-size: inherit;
-  font-family: monospace;
+  font-family: inherit;
 }
 
 html {
-  font-size: 15px;
+  font-size: 16px;
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.5;
 }
 
 body {
   margin: unset;
-  background: var(--bg);
-  color: var(--fg);
-  line-height: 1.5;
 }
 
 header, footer {
