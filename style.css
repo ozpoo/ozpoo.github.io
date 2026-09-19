@@ -1,7 +1,32 @@
 :root {
-  /* color-scheme: light dark; */
-  --bg: light-dark(#ffffff, #000000);
-  --fg: light-dark(#000000, #ffffff);
+  color-scheme: light dark;
+
+  --base: mintcream;
+
+  --bg-l: color-mix(in srgb, var(--base), black 6%);
+  --bg-d: color-mix(in srgb, black, var(--base) 4%);
+  --bg: light-dark(var(--bg-l), var(--bg-d));
+
+  --fg-l: color-mix(in srgb, var(--bg-d), var(--bg-l) 6%);
+  --fg-d: color-mix(in srgb, var(--bg-l), var(--bg-d) 6%);
+  --fg: light-dark(var(--fg-l), var(--fg-d));
+
+  --soft-l: color-mix(in srgb, var(--fg), var(--base) 34%);
+  --soft-d: color-mix(in srgb, var(--bg), var(--base) 58%);
+  --soft: light-dark(var(--soft-l), var(--soft-d));
+
+  --dim-l: color-mix(in srgb, var(--fg), var(--base) 52%);
+  --dim-d: color-mix(in srgb, var(--bg), var(--base) 34%);
+  --dim: light-dark(var(--dim-l), var(--dim-d));
+
+  --mute-l: color-mix(in srgb, var(--fg), var(--base) 80%);
+  --mute-d: color-mix(in srgb, var(--bg), var(--base) 20%);
+  --mute: light-dark(var(--mute-l), var(--mute-d));
+
+  --accent: var(--soft);
+  --visited: var(--fg);
+
+  --txt-sm: 0.88rem;
 }
 
 * {
@@ -9,35 +34,95 @@
   font-family: monospace;
 }
 
+html {
+  font-size: 15px;
+}
+
 body {
-  margin: 2ch;
+  margin: unset;
   background: var(--bg);
   color: var(--fg);
+  line-height: 1.5;
 }
 
-h1, h2, h3, h4, h5, h6, p, ul, blockquote, pre {
-  margin-top: 1ch;
-  margin-bottom: 1ch;
+header, footer {
+  margin: 1rem;
+  font-size: var(--txt-sm);
+  color: var(--soft);
 }
 
-blockquote {
-  margin-left: 4ch;
-  margin-right: 4ch;
+header:before {
+  content: '<header:';
+  color: var(--dim);
 }
 
-ul {
-  padding-left: 4ch;
+header nav {
+  display: inline-block;
 }
 
-hr {
-  margin: 2ch 0;
-  border-style: solid;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  color: inherit;
+header a:link, header a:visited {
+  color: var(--soft);
+}
+
+footer:before {
+  content: '> <footer:';
+  color: var(--dim);
+}
+
+footer:after {
+  content: '>';
+  color: var(--dim);
+}
+
+main {
+  max-width: 40rem;
 }
 
 article>h1 em {
   font-weight: normal;
+}
+
+a:link {
+  color: var(--accent);
+}
+
+a:visited {
+  color: var(--visited);
+}
+
+mark {
+  background: unset;
+  color: var(--soft);
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, blockquote, pre {
+  margin: 1rem;
+}
+
+ul {
+  padding-left: 2rem;
+}
+
+li::marker {
+  content: '\2022  ';
+  color: var(--dim);
+  font-size: 1rem;
+  line-height: 1;
+}
+
+blockquote {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  border-left: 1px solid var(--dim);
+}
+
+hr {
+  margin: 2rem 1rem;
+  color: var(--dim);
+  border: none;
+}
+
+hr:before {
+  content: '> --- <break:';
+  font-size: var(--txt-sm);
 }
