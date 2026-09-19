@@ -11,22 +11,14 @@
   --fg-d: color-mix(in srgb, var(--bg-l), var(--bg-d) 8%);
   --fg: light-dark(var(--fg-l), var(--fg-d));
 
-  --soft-l: color-mix(in srgb, var(--fg), var(--base) 34%);
-  --soft-d: color-mix(in srgb, var(--bg), var(--base) 58%);
-  --soft: light-dark(var(--soft-l), var(--soft-d));
-
-  --dim-l: color-mix(in srgb, var(--fg), var(--base) 52%);
-  --dim-d: color-mix(in srgb, var(--bg), var(--base) 34%);
+  --dim-l: color-mix(in srgb, var(--fg), var(--base) 38%);
+  --dim-d: color-mix(in srgb, var(--bg), var(--base) 48%);
   --dim: light-dark(var(--dim-l), var(--dim-d));
 
-  --mute-l: color-mix(in srgb, var(--fg), var(--base) 80%);
-  --mute-d: color-mix(in srgb, var(--bg), var(--base) 20%);
-  --mute: light-dark(var(--mute-l), var(--mute-d));
-
-  --accent: var(--soft);
+  --accent: var(--dim);
   --visited: var(--fg);
 
-  --txt-sm: 0.88rem;
+  --txt-sm: 0.86rem;
 
   --sans: ia-writer-quattro, sans-serif;
   --mono: ia-writer-mono, monospace;
@@ -52,7 +44,8 @@ body {
 header, footer {
   margin: 1rem;
   font-size: var(--txt-sm);
-  color: var(--soft);
+  font-family: var(--mono);
+  color: var(--dim);
 }
 
 header:before {
@@ -65,11 +58,12 @@ header nav {
 }
 
 header a:link, header a:visited {
-  color: var(--soft);
+  color: var(--dim);
 }
 
 footer:before {
   content: '> <footer:';
+  font-family: var(--mono);
   color: var(--dim);
 }
 
@@ -96,7 +90,9 @@ a:visited {
 
 mark {
   background: unset;
-  color: var(--soft);
+  color: var(--dim);
+  font-family: var(--mono);
+  font-size: var(--txt-sm);
 }
 
 h1, h2, h3, h4, h5, h6, p, ul, blockquote, pre {
@@ -128,5 +124,6 @@ hr {
 
 hr:before {
   content: '> --- <break:';
+  font-family: var(--mono);
   font-size: var(--txt-sm);
 }
