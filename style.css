@@ -1,5 +1,5 @@
 :root {
-  color-scheme: light dark;
+  /* color-scheme: light dark; */
 
   --base: mintcream;
 
@@ -18,7 +18,7 @@
   --accent: var(--dim);
   --visited: var(--fg);
 
-  --txt-sm: 0.86rem;
+  --txt-sm: 0.88rem;
 
   --sans: ia-writer-quattro, sans-serif;
   --mono: ia-writer-mono, monospace;
@@ -30,7 +30,7 @@
 }
 
 html {
-  font-size: 16px;
+  font-size: 17px;
   font-family: var(--sans);
   background: var(--bg);
   color: var(--fg);
@@ -48,17 +48,21 @@ header, footer {
   color: var(--dim);
 }
 
-header:before {
-  content: '<header:';
-  color: var(--dim);
-}
-
 header nav {
   display: inline-block;
 }
 
-header a:link, header a:visited {
+header nav:before {
+  content: '<location: ';
   color: var(--dim);
+}
+
+header nav a:link, nav a:visited {
+  color: var(--dim);
+}
+
+header nav a:hover {
+  color: var(--fg);
 }
 
 footer:before {
@@ -70,10 +74,6 @@ footer:before {
 footer:after {
   content: '>';
   color: var(--dim);
-}
-
-main {
-  max-width: 40rem;
 }
 
 article>h1 em {
@@ -88,6 +88,10 @@ a:visited {
   color: var(--visited);
 }
 
+a:hover {
+  color: var(--fg);
+}
+
 mark {
   background: unset;
   color: var(--dim);
@@ -97,22 +101,24 @@ mark {
 
 h1, h2, h3, h4, h5, h6, p, ul, blockquote, pre {
   margin: 1rem;
+  max-width: 30rem;
 }
 
 ul {
   padding-left: 2rem;
 }
 
+li {
+  list-style: '- ';
+}
+
 li::marker {
-  content: '\2022  ';
   color: var(--dim);
   font-size: 1rem;
   line-height: 1;
 }
 
 blockquote {
-  margin-left: 2rem;
-  margin-right: 2rem;
   border-left: 1px solid var(--dim);
 }
 
@@ -123,7 +129,7 @@ hr {
 }
 
 hr:before {
-  content: '> --- <break:';
+  content: '> --- <section:';
   font-family: var(--mono);
   font-size: var(--txt-sm);
 }
