@@ -65,14 +65,6 @@ header:before {
   color: var(--dim);
 }
 
-header a:link, a:visited {
-  color: var(--dim);
-}
-
-header a:hover {
-  color: var(--fg);
-}
-
 footer:before {
   content: '> <footer:';
   font-family: var(--mono);
