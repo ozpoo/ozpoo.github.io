@@ -11,9 +11,21 @@
   --fg-d: color-mix(in srgb, var(--bg-l), var(--bg-d) 8%);
   --fg: light-dark(var(--fg-l), var(--fg-d));
 
-  --dim-l: color-mix(in srgb, var(--fg), var(--base) 38%);
-  --dim-d: color-mix(in srgb, var(--bg), var(--base) 48%);
+  --soft-l: color-mix(in srgb, var(--fg), var(--base) 48%);
+  --soft-d: color-mix(in srgb, var(--bg), var(--base) 68%);
+  --soft: light-dark(var(--soft-l), var(--soft-d));
+
+  --light-l: color-mix(in srgb, var(--fg), var(--base) 53%);
+  --light-d: color-mix(in srgb, var(--bg), var(--base) 68%);
+  --light: light-dark(var(--light-l), var(--light-d));
+
+  --dim-l: color-mix(in srgb, var(--fg), var(--base) 58%);
+  --dim-d: color-mix(in srgb, var(--bg), var(--base) 53%);
   --dim: light-dark(var(--dim-l), var(--dim-d));
+
+  --mute-l: color-mix(in srgb, var(--fg), var(--base) 8%);
+  --mute-d: color-mix(in srgb, var(--bg), var(--base) 8%);
+  --mute: light-dark(var(--mute-l), var(--mute-d));
 
   --accent: var(--dim);
   --visited: var(--fg);
@@ -48,20 +60,16 @@ header, footer {
   color: var(--dim);
 }
 
-header nav {
-  display: inline-block;
-}
-
-header nav:before {
+header:before {
   content: '<location: ';
   color: var(--dim);
 }
 
-header nav a:link, nav a:visited {
+header a:link, a:visited {
   color: var(--dim);
 }
 
-header nav a:hover {
+header a:hover {
   color: var(--fg);
 }
 
@@ -81,20 +89,27 @@ article>h1 em {
 }
 
 a:link {
-  color: var(--accent);
+  color: var(--dim);
 }
 
 a:visited {
-  color: var(--visited);
+  color: var(--fg);
 }
 
 a:hover {
-  color: var(--fg);
+  color: var(--light);
+}
+
+code {
+  font-family: var(--mono);
+  font-size: var(--txt-sm);
+  /* background: var(--mute); */
+  color: var(--soft);
 }
 
 mark {
   background: unset;
-  color: var(--dim);
+  color: var(--light);
   font-family: var(--mono);
   font-size: var(--txt-sm);
 }
