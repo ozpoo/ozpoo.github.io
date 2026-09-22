@@ -53,15 +53,23 @@ body {
   margin: unset;
 }
 
-header, footer {
+footer {
   margin: 1rem;
   font-size: var(--txt-sm);
   font-family: var(--mono);
   color: var(--dim);
 }
 
-header:before {
-  content: '<location: ';
+header {
+  padding: 0.6rem;
+  position: sticky;
+  top: 0;
+  font-size: var(--txt-sm);
+  background: var(--bg);
+}
+
+nav:before {
+  content: '<nav: ';
   color: var(--dim);
 }
 
