@@ -10,14 +10,14 @@ html {
 
 @media (max-width: 768px) {
   html {
-    font-size: 17px;
+    font-size: 18px;
   }
 }
 
 body {
   margin: unset;
   color: light-dark(hsl(82, 39%, 12%), hsl(120, 25%, 92%));
-  background: light-dark(hsl(82, 30%, 96%), hsl(120, 4%, 8%));
+  background: light-dark(hsl(82, 30%, 96%), hsl(120, 4%, 7%));
 }
 
 h1 {
