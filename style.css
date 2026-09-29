@@ -67,6 +67,10 @@ nav a {
   margin-right: 0.4rem;
 }
 
+li::marker {
+  color: light-dark(hsl(82, 20%, 68%), hsl(120, 4%, 38%));
+}
+
 a {
   color: light-dark(hsl(82, 39%, 30%), hsl(120, 25%, 65%));
 }
