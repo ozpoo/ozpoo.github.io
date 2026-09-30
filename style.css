@@ -1,11 +1,49 @@
 :root {
   color-scheme: light dark;
+
+  /* 82, 39%, 30% */
+  --tint: darkolivegreen;
+
+  --base-light: hsl(from var(--tint) h calc(s - 2) l);
+  --base-dark: hsl(from var(--tint) h calc(s - 20) calc(l + 4));
+
+  --base: light-dark(var(--base-light), var(--base-dark));
+
+  --bg-light: hsl(from var(--base) h calc(s - 28) calc(l + 54));
+  --bg-dark: hsl(from var(--base) h calc(s - 28) calc(l - 29));
+
+  --fg-light: hsl(from var(--base) h s calc(l - 16));
+  --fg-dark: hsl(from var(--base) h calc(s - 14) calc(l + 40));
+
+  --accent-light: hsl(from var(--base) h s calc(l));
+  --accent-dark: hsl(from var(--base) h s calc(l));
+
+  --border-light: hsl(from var(--base) h calc(s - 18) calc(l + 36));
+  --border-dark: hsl(from var(--base) h calc(s - 14) calc(l - 14));
+
+  --bullet-light: hsl(from var(--base) h calc(s - 16) calc(l + 30));
+  --bullet-dark: hsl(from var(--base) h calc(s - 14) calc(l - 8));
+
+  --brite-light: hsl(from var(--base) h s calc(l - 18));
+  --brite-dark: hsl(from var(--base) h calc(s - 14) calc(l + 42));
+
+  --tag-light: hsl(from var(--base) h calc(s - 24) calc(l + 18));
+  --tag-dark: hsl(from var(--base) h calc(s - 10) calc(l - 4));
+
+  --bg: light-dark(var(--bg-light), var(--bg-dark));
+  --fg: light-dark(var(--fg-light), var(--fg-dark));
+
+  --accent: light-dark(var(--accent-light), var(--accent-dark));
+  --border: light-dark(var(--border-light), var(--border-dark));
+  --bullet: light-dark(var(--bullet-light), var(--bullet-dark));
+  --brite: light-dark(var(--brite-light), var(--brite-dark));
+  --tag: light-dark(var(--tag-light), var(--tag-dark));
 }
 
 html {
-  font-size: 16px;
-  line-height: 1.5;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 16.6px;
+  line-height: 1.4;
+  font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
 }
 
 @media (max-width: 768px) {
@@ -16,65 +54,224 @@ html {
 
 body {
   margin: unset;
-  color: light-dark(hsl(82, 39%, 12%), hsl(120, 25%, 92%));
-  background: light-dark(hsl(82, 30%, 96%), hsl(120, 4%, 7%));
+  color: var(--fg);
+  background: var(--bg);
 }
 
 h1 {
-  font-size: 1.3rem;
-  line-height: 1.1;
-  margin-block-start: 1.07em;
-  margin-block-end: 1.07em;
+  font-size: 1.48em;
+  line-height: 1.15;
+  margin-block-start: 1.2em;
+  margin-block-end: 0.8rem;
+  color: var(--brite);
 }
 
 h2 {
-  font-size: 1.1rem;
+  font-size: 1.24em;
   line-height: 1.2;
-  margin-block-start: 0.97em;
-  margin-block-end: 0.97em;
+  margin-block-start: 1.24em;
+  margin-block-end: 0.8rem;
+  color: var(--brite);
 }
 
 h3 {
-  font-size: 1.3rem;
-  line-height: 1.25;
+  font-size: 1.16em;
+  line-height: 1.3;
+  margin-block-start: 1.2em;
+  margin-block-end: 0.8rem;
+  color: var(--brite);
 }
 
 h4 {
-  font-size: 1.2rem;
+  font-size: 1.08em;
   line-height: 1.3;
+  margin-block-start: 1.2em;
+  margin-block-end: 0.8rem;
+  color: var(--brite);
 }
 
-p {
+h5, h6 {
+  font-size: 1em;
+  color: var(--brite);
+  margin-block-start: 1.2em;
+  margin-block-end: 0.8rem;
+}
+
+strong {
+  color: var(--brite);
+}
+
+ul, ol, p, blockquote, table, pre {
   margin-block-start: 0.8em;
   margin-block-end: 0.8em;
 }
 
+ul {
+  padding-left: 1.5em;
+}
+
+ul ul {
+  margin: 0;
+}
+
+blockquote {
+  margin-left: 1.4em;
+}
+
 hr {
-  max-width: 12rem;
   border: none;
-  border-bottom: 1px solid light-dark(hsl(82, 14%, 74%), hsl(120, 4%, 28%));
-  margin-block-start: 1.5em;
-  margin-block-end: 1.5em;
+  text-align: center;
+  color: var(--border);
+  margin-block-start: 0.9em;
+  margin-block-end: 0.9em;
+}
+
+hr::after {
+  content: "\2022  \2022  \2022";
+  font-size: 0.8em;
 }
 
 main, header, footer {
   padding: 0 1rem;
   max-width: 26rem;
-  margin: 2rem auto;
+  margin: 1.6rem auto;
 }
 
 nav a {
-  margin-right: 0.4rem;
+  margin-right: 0.4em;
 }
 
 li::marker {
-  color: light-dark(hsl(82, 20%, 68%), hsl(120, 4%, 38%));
+  color: var(--bullet);
 }
 
 a {
-  color: light-dark(hsl(82, 39%, 30%), hsl(120, 25%, 65%));
+  color: var(--accent);
 }
 
 a:hover {
   color: currentColor;
+}
+
+table {
+  border-collapse: collapse;
+  font-size: 0.9em;
+  line-height: 1.3;
+}
+
+thead {
+  border-bottom: 1px solid var(--border);
+}
+
+th, td {
+  vertical-align: text-top;
+  padding: 0.125em 0.5em;
+}
+
+th {
+  text-align: left;
+  padding-bottom: 0.375em;
+}
+
+tbody tr:first-child td {
+  padding-top: 0.375em;
+}
+
+
+
+body[source] *, body[source] ::after, body[source] ::before {
+  max-width: unset;
+  padding: unset;
+  font-size: inherit;
+  text-align: left;
+  list-style: none;
+}
+
+body[source] {
+  padding: 0 1rem;
+  max-width: 26rem;
+  margin: 1.6rem auto;
+}
+
+body[source] h1::before {
+  content: '<h1>';
+  color: var(--tag);
+}
+
+body[source] h1::after {
+  content: '</h1>';
+  color: var(--tag);
+}
+
+body[source] h2::before {
+  content: '<h2>';
+  color: var(--tag);
+}
+
+body[source] h2::after {
+  content: '</h2>';
+  color: var(--tag);
+}
+
+body[source] h3::before {
+  content: '<h3>';
+  color: var(--tag);
+}
+
+body[source] h3::after {
+  content: '</h3>';
+  color: var(--tag);
+}
+
+body[source] p::before {
+  content: '<p>';
+  color: var(--tag);
+}
+
+body[source] p::after {
+  content: '</p>';
+  color: var(--tag);
+}
+
+body[source] ul::before {
+  content: '<ul>';
+  color: var(--tag);
+}
+
+body[source] ul::after {
+  content: '</ul>';
+  color: var(--tag);
+}
+
+body[source] li::before {
+  content: '<li>';
+  color: var(--tag);
+}
+
+body[source] li::after {
+  content: '</li>';
+  color: var(--tag);
+}
+
+body[source] hr::after {
+  content: '<hr>';
+  color: var(--tag);
+}
+
+body[source] nav::before {
+  content: '<nav>';
+  color: var(--tag);
+}
+
+body[source] nav::after {
+  content: '</nav>';
+  color: var(--tag);
+}
+
+body[source] hr {
+  margin: 1rem 0;
+}
+
+body[source] li {
+  margin-left: 1em;
 }
