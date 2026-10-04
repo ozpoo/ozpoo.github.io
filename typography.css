@@ -1,22 +1,30 @@
+:root {
+  --lh: 1.5rem;
+  --sp: 1rem;
+  --sst: 0.26rem;
+  --hst: 0.22rem;
+}
+
 html {
-  line-height: 1.5rem;
+  font-size: 100%;
+  line-height: var(--lh);
 }
 
 p {
-  line-height: 1.5rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  line-height: var(--lh);
+  margin-top: var(--sp);
+  margin-bottom: var(--sp);
 }
 
 ul,
 ol {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: var(--sp);
+  margin-bottom: var(--sp);
 }
 
 ul li,
 ol li {
-  line-height: 1.5rem;
+  line-height: var(--lh);
 }
 
 ul ul,
@@ -28,9 +36,9 @@ ol ol {
 }
 
 blockquote {
-  line-height: 1.5rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  line-height: var(--lh);
+  margin-top: var(--sp);
+  margin-bottom: var(--sp);
 }
 
 h1,
@@ -39,31 +47,36 @@ h3,
 h4,
 h5,
 h6 {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  line-height: 1.5rem;
+  line-height: var(--lh);
+  margin-top: var(--sp);
+  margin-bottom: var(--sp);
 }
 
 h1 {
-  font-size: 2.121rem;
-  line-height: 2.5rem;
-  margin-top: 2.5rem;
-  margin-bottom: 2rem;
+  font-size: calc(calc(var(--sst) * 3.5) + 1rem);
+  line-height: calc(calc(var(--hst) * 3.5) + var(--lh));
+  margin-top: 3rem;
 }
 
 h2 {
-  font-size: 1.64966667rem;
-  line-height: 2rem;
+  font-size: calc(calc(var(--sst) * 2) + 1rem);
+  line-height: calc(calc(var(--hst) * 2) + var(--lh));
   margin-top: 2rem;
 }
 
 h3 {
-  margin-top: 2rem;
-  font-size: 1.414rem;
+  font-size: calc(var(--sst) + 1rem);
+  line-height: calc(var(--hst) + var(--lh));
+}
+
+hr {
+  margin-top: calc(var(--sp) * 1.12);
+  margin-bottom: calc(var(--sp) * 1.12);
 }
 
 table {
-  margin-top: 1.5rem;
+  margin-top: var(--sp);
+  margin-bottom: var(--sp);
   border-spacing: 0px;
   border-collapse: collapse;
 }
@@ -79,21 +92,9 @@ code {
 }
 
 .lead {
-  font-size: 1.414rem;
+  font-size: 1.343434rem;
 }
 
 .hug {
   margin-top: 0;
 }
-
-/* h1 {
-  font-size: 4.242rem;
-  line-height: 4.5rem;
-  margin-top: 3rem;
-} */
-
-/* h2 {
-  font-size: 2.828rem;
-  line-height: 3rem;
-  margin-top: 3rem;
-} */
