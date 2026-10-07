@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# bin="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$bin/shared"
+
+# echo building...
+# "$bin/build"
+
+cd "$out"
+
+echo committing...
+
+git add .
+git commit -m '.'
+git push

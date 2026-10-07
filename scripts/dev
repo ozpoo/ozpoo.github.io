@@ -1,0 +1,105 @@
+#!/bin/bash
+
+bin="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$bin/shared"
+
+target="file://$out/index.html"
+
+reload() {
+  osascript -e "
+    tell application \"Brave\"
+      activate
+      set found to false
+      
+      repeat with w in (every window)
+        try
+          set tab_list to every tab of w
+          repeat with i from 1 to count of tab_list
+            set t to item i of tab_list
+            if URL of t starts with \"$target\" then
+              set active tab index of w to i
+              set index of w to 1
+              tell t to reload
+              set found to true
+              exit repeat
+            end if
+          end repeat
+        end try
+        if found then exit repeat
+      end repeat
+      
+      if not found then
+        if (count of windows) is 0 then
+          make new window
+          set URL of active tab of window 1 to \"$target\"
+        else
+          tell window 1 to make new tab with properties {URL:\"$target\"}
+        end if
+      end if
+    end tell"
+}
+
+"$bin/build"
+
+reload
+
+style="style.css"
+style_last_mod=$(stat -f %m "$style")
+
+typography="typography.css"
+typography_last_mod=$(stat -f %m "$typography")
+
+index="index.md"
+index_last_mod=$(stat -f %m "$index")
+
+build="scripts/build"
+build_last_mod=$(stat -f %m "$build")
+
+shared="scripts/shared"
+shared_last_mod=$(stat -f %m "$shared")
+
+echo watching for changes...
+
+while true; do
+  current_mod=$(stat -f %m "$style")
+  if [ "$current_mod" != "$style_last_mod" ]; then
+    echo "change detected: style"
+    style_last_mod=$current_mod
+    build_style
+    osascript -e 'tell application "Brave" to reload active tab of window 1'
+  fi
+
+  current_mod=$(stat -f %m "$typography")
+  if [ "$current_mod" != "$typography_last_mod" ]; then
+    echo "change detected: typography"
+    typography_last_mod=$current_mod
+    build_style
+    osascript -e 'tell application "Brave" to reload active tab of window 1'
+  fi
+
+  current_mod=$(stat -f %m "$index")
+  if [ "$current_mod" != "$index_last_mod" ]; then
+    echo "change detected: index"
+    index_last_mod=$current_mod
+    build_index
+    osascript -e 'tell application "Brave" to reload active tab of window 1'
+  fi
+
+  current_mod=$(stat -f %m "$build")
+  if [ "$current_mod" != "$build_last_mod" ]; then
+    echo "change detected: build"
+    build_last_mod=$current_mod
+    "$bin/build"
+    osascript -e 'tell application "Brave" to reload active tab of window 1'
+  fi
+
+  current_mod=$(stat -f %m "$shared")
+  if [ "$current_mod" != "$shared_last_mod" ]; then
+    echo "change detected: shared"
+    shared_last_mod=$current_mod
+    "$bin/build"
+    osascript -e 'tell application "Brave" to reload active tab of window 1'
+  fi
+
+  sleep 0.2
+done

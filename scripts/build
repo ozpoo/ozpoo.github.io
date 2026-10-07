@@ -1,0 +1,26 @@
+#!/bin/bash
+
+bin="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$bin/shared"
+
+source="/Users/oz/Documents/Obsidian/edu/Research/_"
+
+rm -rf $out/*.html
+rm -rf $out/*.css
+
+mkdir -p $out
+mkdir -p $out/content
+
+build_style
+build_index
+
+# build_dir "web" "web"
+
+build_dir "the-foundations" "/Users/oz/Documents/Obsidian/edu/Research/The Foundations"
+build_dir "a-way-in" "/Users/oz/Documents/Obsidian/edu/Research/A Way In"
+build_dir "field-notes" "/Users/oz/Documents/Obsidian/edu/Research/Field Notes"
+build_dir "working-inquiries" "/Users/oz/Documents/Obsidian/edu/Research/Working Inquiries"
+build_dir "frameworks" "/Users/oz/Documents/Obsidian/edu/Research/Frameworks"
+build_dir "practices" "/Users/oz/Documents/Obsidian/edu/Research/Practices"
+build_dir "practices-information-as-a-system" "/Users/oz/Documents/Obsidian/edu/Research/Practices/Information as a System"
+build_dir "practices-ai-for-design-thinking" "/Users/oz/Documents/Obsidian/edu/Research/Practices/AI For Design Thinking"
