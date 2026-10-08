@@ -69,6 +69,18 @@ h4 {
   line-height: calc(calc(var(--hst) * 0.4) + var(--lh));
 }
 
+h5 {
+  font-size: calc(1rem - calc(var(--sst) * 0.4));
+  line-height: calc(var(--lh) - calc(var(--hst) * 0.4));
+  text-transform: uppercase;
+}
+
+h6 {
+  font-size: calc(1rem - calc(var(--sst) * 0.8));
+  line-height: calc(var(--lh) - calc(var(--hst) * 0.8));
+  text-transform: uppercase;
+}
+
 hr {
   margin-top: calc(var(--sp) * 1.12);
   margin-bottom: calc(var(--sp) * 1.12);
@@ -84,7 +96,7 @@ table {
 table td,
 table th {
   padding: 0;
-  line-height: 1.84rem;
+  line-height: var(--lh);
 }
 
 code {
