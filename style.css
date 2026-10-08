@@ -88,11 +88,16 @@ a {
   color: currentColor;
 }
 
-nav {
+header nav {
   display: flex;
   flex-wrap: wrap;
   gap: 0 0.5rem;
   line-height: 1.2;
+}
+
+main nav {
+  display: flex;
+  justify-content: space-between;
 }
 
 /* 82, 39%, 30% */
@@ -113,6 +118,23 @@ main h1:first-child {
   margin-top: -0.18rem;
 }
 
-hr+h1, hr+h2, hr+h3 {
+hr+h1, hr+h2, hr+h3, hr+h4 {
   margin-top: -0.18rem;
+}
+
+li::marker {
+  color: var(--bullet);
+}
+
+ul, ol {
+  padding-left: 2rem;
+}
+
+blockquote {
+  line-height: var(--lh);
+  margin-top: var(--sp);
+  margin-bottom: var(--sp);
+  margin-left: 0;
+  padding-left: 1rem;
+  border-left: 1px solid var(--bullet);
 }

@@ -35,12 +35,6 @@ ol ol {
   margin-bottom: 0;
 }
 
-blockquote {
-  line-height: var(--lh);
-  margin-top: var(--sp);
-  margin-bottom: var(--sp);
-}
-
 h1,
 h2,
 h3,
@@ -67,7 +61,12 @@ h2 {
 h3 {
   font-size: calc(var(--sst) + 1rem);
   line-height: calc(var(--hst) + var(--lh));
-  margin-top: 3rem;
+  margin-top: 2rem;
+}
+
+h4 {
+  font-size: calc(calc(var(--sst) * 0.4) + 1rem);
+  line-height: calc(calc(var(--hst) * 0.4) + var(--lh));
 }
 
 hr {
@@ -93,7 +92,8 @@ code {
 }
 
 .lead {
-  font-size: 1.343434rem;
+  font-size: calc(var(--sst) + 1rem);
+  line-height: calc(var(--hst) + var(--lh));
 }
 
 .hug {
